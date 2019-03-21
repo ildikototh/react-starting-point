@@ -1,10 +1,12 @@
 import React from 'react';
-import { any, bool } from 'prop-types';
+import { any } from 'prop-types';
 import classNames from 'classnames';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
-export const Layout = ({ children, className}) => {
+export const Layout = ({
+                         children, className
+                       }) => {
   const classes = classNames(
     {
       [className]: true,
