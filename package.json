@@ -62,8 +62,8 @@
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-cypress": "^2.2.1",
     "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jest": "^21.27.1",
-    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-jest": "^22.4.1",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.11.1",
     "express": "^4.16.4",
     "fetch-mock": "^7.3.0",
@@ -115,6 +115,7 @@
   },
   "eslintIgnore": [
     "/src/setupTests.js",
+    "/src/serviceWorker.js",
     "/coverage/*",
     "/build/*",
     "/scripts/*",
