@@ -1,27 +1,12 @@
 import React from 'react';
-import '../../components/App/App.css';
-import logo from '../../logo.svg';
+import Header from "../../layouts/Header";
+import Footer from "../../layouts/Footer";
 
 const Main = () => (
   <div className="App">
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>
-        Edit
-        {' '}
-        <code>src/App.js</code>
-        {' '}
-and save to reload.
-      </p>
-      <a
-        className="App-link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Learn React
-      </a>
-    </header>
+    <Header />
+    <div className="content">React Starting point boilerplate</div>
+    <Footer />
   </div>
 );
 
