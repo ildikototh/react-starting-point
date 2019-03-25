@@ -1,18 +1,14 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-import { text, withKnobs } from '@storybook/addon-knobs';
+import { withKnobs } from '@storybook/addon-knobs';
 import Checkbox from '../../src/layouts/Checkbox';
 
-const props =
-  {
-    label: 'Checkbox label',
-    name: 'checkbox1',
-  }
-  ;
-
+const props = {
+  label: 'Checkbox label',
+  name: 'checkbox1',
+};
 storiesOf('Checkbox', module)
   .addDecorator(withKnobs)
   .add('default', () => (
-    <Checkbox {...props}
-    />
+    <Checkbox {...props} />
   ));

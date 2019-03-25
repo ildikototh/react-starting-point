@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Checkbox = ({
-                    id, name, disabled, label, onChange, checked,
-                  }) => (
+  name, disabled, label, onChange, checked,
+}) => (
   <div className="c-checkbox">
     <input
       name={name}
@@ -17,9 +17,7 @@ const Checkbox = ({
       {label}
     </label>
   </div>
-)
-;
-
+);
 Checkbox.propTypes = {
   checked: PropTypes.bool,
   disabled: PropTypes.bool,

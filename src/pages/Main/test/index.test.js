@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Main from '..';
+import Main from '../Main';
 import MainInterface from '../index';
 
 jest.mock('../Main', () => ({
