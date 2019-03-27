@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  withRouter, Route, Switch,
+  Route, Switch,
 } from 'react-router-dom';
 import NotFound from '../../pages/NotFound/NotFound';
 import Main from '../../pages/Main';
@@ -12,4 +12,4 @@ const App = () => (
   </Switch>
 );
 
-export default withRouter(App);
+export default App;
