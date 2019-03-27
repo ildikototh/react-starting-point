@@ -1,15 +1,22 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {
   withRouter, Route, Switch,
 } from 'react-router-dom';
-import NotFound from '../../pages/NotFound';
-import Main from '../../pages/Main';
+import { string } from 'prop-types';
+import { compose } from 'redux';
+import NotFound from '../../pages/NotFound/NotFound';
+import Main from "../../pages/Main";
 
-const App = () => (
-  <Switch>
-    <Route exact path="/" component={Main} />
-    <Route render={NotFound} />
-  </Switch>
-);
-
-export default withRouter(App);
+export class App extends Component {
+  render() {
+    return (
+      <Switch>
+        <Route exact path="/" component={Main} />
+        <Route render={NotFound} />
+      </Switch>
+    );
+  }
+}
+export default compose(
+  withRouter,
+)(App);

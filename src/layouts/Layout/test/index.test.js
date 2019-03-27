@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Layout } from '../Layout';
+import Layout from '../Layout';
 import LayoutInterface from '../index';
 
 jest.mock('../Layout', () => ({
@@ -8,7 +8,7 @@ jest.mock('../Layout', () => ({
   default: jest.fn(),
 }));
 
-describe('App Component interface', () => {
+describe('Layout Component interface', () => {
   it('Should export the main component', () => {
     shallow(<Layout />);
     expect(LayoutInterface).toHaveBeenCalled();
