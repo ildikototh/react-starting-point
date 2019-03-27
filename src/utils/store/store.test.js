@@ -1,6 +1,6 @@
 import { applyMiddleware, createStore } from 'redux';
+import { createPromise } from 'redux-promise-middleware';
 import rootReducer from '../reducers/rootReducer';
-import { createPromise } from "redux-promise-middleware";
 
 describe('Store', () => {
   const SAVED_ENV = process.env;

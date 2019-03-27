@@ -3,14 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import App from './components/App';
-import { set } from './utils/store/localStorage';
+import App from './components/App/App';
+import { setItem } from './utils/store/localStorage';
 import store from './utils/store/store';
 
 import * as serviceWorker from './serviceWorker';
 
 store.subscribe(() => {
-  set(store.getState());
+  setItem('state', store.getState());
 });
 
 ReactDOM.render(

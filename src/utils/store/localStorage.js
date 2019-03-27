@@ -1,14 +1,8 @@
-const get = (key) => {
+const setItem = (key, value) => localStorage.setItem(key, JSON.stringify(value));
+
+const getItem = (key) => {
   try {
     return JSON.parse(localStorage.getItem(key));
-  } catch (e) {
-    return undefined;
-  }
-};
-
-const set = (key, value) => {
-  try {
-    return localStorage.setItem(key, JSON.stringify(value));
   } catch (e) {
     return null;
   }
@@ -19,7 +13,7 @@ const clear = () => {
 };
 
 export {
-  get,
-  set,
+  getItem,
+  setItem,
   clear,
 };

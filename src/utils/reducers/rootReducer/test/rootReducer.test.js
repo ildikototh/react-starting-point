@@ -1,6 +1,6 @@
-import rootReducer from '../rootReducer'; 
 import { createStore } from 'redux';
-import loading from "../../loaderReducer/loaderReducer";
+import rootReducer from '../rootReducer';
+import loading from '../../loaderReducer/loaderReducer';
 
 const store = createStore(rootReducer);
 
@@ -9,8 +9,8 @@ describe('Root reducer', () => {
     expect(store.getState().loading).toEqual(loading(undefined, {}));
   });
 
-  it('should check child reducers handle unmatching actions', () => {
+  it('should check child reducers handle missing actions', () => {
     const action = { type: 'WRONG' };
     expect(store.getState().loading).toEqual(loading(undefined, action));
   });
-})
+});

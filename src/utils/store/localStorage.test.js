@@ -1,48 +1,31 @@
-import { set, get, clear } from './localStorage';
+import { setItem, getItem, clear } from './localStorage';
 
-describe('localStorage', () => {
-  class LocalStorageMock {
-    constructor() {
-      this.store = {};
-    }
+describe('LocalStorage', () => {
+  beforeEach(() => {
+    localStorage.clear();
+    jest.resetAllMocks();
+    localStorage.setItem.mockClear();
+  });
 
-    getItem(key) {
-      return this.store[key] || null;
-    }
-
-    setItem(key, value) {
-      this.store[key] = JSON.parse(value);
-    }
-
-    clear() {
-      this.store = {};
-    }
-  }
-
-  window.localStorage = new LocalStorageMock();
-  afterEach(() => {
-    window.localStorage.clear();
+  it('should return null if missing storage key', () => {
+    localStorage.setItem('lorem', 'ipsum');
+    expect(getItem('loading')).toEqual(null);
   });
 
   it('Should set an item in the localStorage', () => {
-    set('loading', 'finished');
-    expect(window.localStorage.setItem).toHaveBeenCalledWith('loading', JSON.stringify('finished'));
+    setItem('lorem', 'ipsum');
+    expect(localStorage.setItem).toHaveBeenCalledWith('lorem', JSON.stringify('ipsum'));
   });
 
   it('Should return an item from localStorage', () => {
-    set('loading', 'finished');
-    const storageValue = get('loading');
-    expect(window.localStorage.getItem).toHaveBeenCalledWith('loading');
-    expect(storageValue).toEqual('finished');
+    setItem('lorem', 'ipsum');
+    getItem('lorem');
+    expect(localStorage.getItem).toHaveBeenCalledTimes(1);
+    expect(localStorage.getItem).toHaveBeenCalledWith('lorem');
   });
 
-  it('Should return with null from localStorage on missing item', () => {
-    const storageValue = get('load');
-    expect(storageValue).toEqual(null);
-  });
-
-  it('Should empty the localstorage', () => {
+  it('call the clear localstorage function', () => {
     clear();
-    expect(window.localStorage.clear).toHaveBeenCalled();
+    expect(localStorage.clear).toHaveBeenCalledTimes(1);
   });
 });
