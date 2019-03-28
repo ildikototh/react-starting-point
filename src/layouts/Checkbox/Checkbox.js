@@ -1,24 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Checkbox = ({
-                    id, name, disabled, label, onChange, checked,
-                  }) => (
-  <div className="c-checkbox">
-    <input
-      name={name}
-      type="checkbox"
-      onChange={onChange}
-      disabled={disabled}
-      checked={checked}
-      className="checkbox__input"
-    />
-    <label htmlFor={name} className="checkbox__label">
-      {label}
-    </label>
-  </div>
-)
-;
+const Checkbox = (props) => {
+  const {
+    name, disabled, label, onChange, checked,
+  } = props;
+  return (
+    <div className="c-checkbox">
+      <input
+        name={name}
+        type="checkbox"
+        onChange={onChange}
+        disabled={disabled}
+        checked={checked}
+        className="checkbox__input"
+      />
+      <label htmlFor={name} className="checkbox__label">
+        {label}
+      </label>
+    </div>
+  );
+};
 
 Checkbox.propTypes = {
   checked: PropTypes.bool,

@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
-export const Layout = ({
+const Layout = ({
   children, className,
 }) => {
   const classes = classNames(

@@ -11,7 +11,7 @@ describe('<Checkbox />', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<Checkbox {...props} />)
+    wrapper = shallow(<Checkbox {...props} />);
   });
 
   it('should match the snapshot', () => {

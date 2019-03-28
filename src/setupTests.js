@@ -11,3 +11,9 @@ Enzyme.configure({ adapter: new EnzymeAdapter() });
 
 global.fetch = jest.fn(() => Promise.resolve());
 global.jest =  require('jest');
+const localStorageMock = {
+  getItem: jest.fn(),
+  setItem: jest.fn(),
+  clear: jest.fn()
+};
+global.localStorage = localStorageMock;

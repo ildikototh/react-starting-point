@@ -9,7 +9,7 @@ jest.mock('../Layout', () => ({
 }));
 
 describe('Layout Component interface', () => {
-  it('Should export the main component', () => {
+  it('Should export the Layout component', () => {
     shallow(<Layout />);
     expect(LayoutInterface).toHaveBeenCalled();
   });
