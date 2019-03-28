@@ -1,6 +1,6 @@
 {
   "name": "react-starting-point",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "start": "react-scripts start",
@@ -12,19 +12,15 @@
     "test:coverage": "react-scripts test --coverage",
     "test:watchCoverage": "react-scripts test --coverage --watchAll",
     "e2e:ui": "cypress open",
-    "e2e": "cypress run --reporter junit --reporter-options 'mochaFile=results/my-test-output.xml'",
+    "e2e":
+      "cypress run --reporter junit --reporter-options 'mochaFile=results/my-test-output.xml'",
     "storybook": "start-storybook -p 9009 -s public",
     "storybook:build": "build-storybook -c .storybook -o ./build/storybook"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
+  "browserslist": [">0.2%", "not dead", "not ie <= 11", "not op_mini all"],
   "dependencies": {
     "classnames": "^2.2.6",
     "core-js": "^2.5.7",
@@ -85,16 +81,14 @@
     "typescript": "^3.3.4000"
   },
   "lint-staged": {
-    "*.js": [
-      "npm run lint:fix",
-      "git add --all"
-    ],
-    "*.json": [
-      "prettier --write",
-      "git add --all"
-    ]
+    "*.js": ["npm run lint:fix", "git add --all"],
+    "*.json": ["prettier --write", "git add --all"]
   },
-  "pre-commit": "lint:staged",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && npm run test:coverage"
+    }
+  },
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}",
