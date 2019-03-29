@@ -2,9 +2,7 @@ import { setItem, getItem, clear } from './localStorage';
 
 describe('LocalStorage', () => {
   beforeEach(() => {
-    localStorage.clear();
     jest.resetAllMocks();
-    localStorage.setItem.mockClear();
   });
 
   it('should return null if missing storage key', () => {
