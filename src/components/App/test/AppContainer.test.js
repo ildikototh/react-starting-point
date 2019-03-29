@@ -18,5 +18,4 @@ describe('AppContainer', () => {
   it('should render the connected App', () => {
     expect(container).not.toBeEmptyRender();
   });
-
 });
